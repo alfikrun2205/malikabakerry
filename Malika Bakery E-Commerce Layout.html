@@ -1,8 +1,424 @@
-<div style="position: relative; width: 100%; height: 0; padding-top: 100.0000%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https://www.canva.com/design/DAHPeLi5koY/pYFz8nB0qUc_IbxlKpc1bw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div>
-<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAHPeLi5koY&#x2F;pYFz8nB0qUc_IbxlKpc1bw&#x2F;view?utm_content=DAHPeLi5koY&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Copy of Malika Bakery E-Commerce Layout</a> by Fikri Hoeru Rozikin
+<!doctype html>
+<html lang="id"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260715-05-d05fd84"}');</script><script src="/_sdk/f432b76fb310b513.telemetry_sdk.js" integrity="sha512-9FJQ55EKmmqhyyik8BhrMVfm0+iYYfb8uOlRsjtkxJMEI97qOVEI4PnHohDjQAtvAep0IOEpdQ64eki0sz62ug=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malika Bakery</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <style>
+        body { font-family: 'DM Sans', sans-serif; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        .cart-badge { position: absolute; top: -6px; right: -6px; width: 20px; height: 20px; border-radius: 50%; background: #c2185b; color: white; font-size: 11px; display: flex; align-items: center; justify-content: center; }
+        .fade-in { animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 40; }
+        .drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(400px, 90vw); background: white; z-index: 50; transform: translateX(100%); transition: transform 0.3s ease; overflow-y: auto; }
+        .drawer.open { transform: translateX(0); }
+        .stock-pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+    </style>
+  <script src="/_sdk/9432170dbd2ae0df.resizing_sdk.js" type="text/javascript" integrity="sha512-FeT+58sb1f9ejWPWFjCbJvTT+SDwGV+ngrHUnlO7TWEOoqwOLj6p256kO3vOL7DIWl1cIgrobiof8v2bOigwPg=="></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full min-h-screen" style="background: rgb(253, 248, 244);"><!-- Nav -->
+  <nav class="fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur shadow-sm">
+   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <h1 data-template-id="nav-logo" class="canva-text font-display text-xl" style="color: rgb(107, 46, 46); font-weight: 700; font-style: normal; font-size: 32px;">Malika Bakery</h1>
+    <div class="hidden md:flex gap-6 text-sm font-medium"><a href="#beranda" class="hover:text-rose-700 transition">Beranda</a> <a href="#menu" class="hover:text-rose-700 transition">Menu</a> <a href="#tentang" class="hover:text-rose-700 transition">Tentang</a> <a href="#lokasi" class="hover:text-rose-700 transition">Lokasi</a> <a href="#faq" class="hover:text-rose-700 transition">FAQ</a>
+    </div><button id="cart-toggle" class="relative p-2" aria-label="Keranjang"> <i data-lucide="shopping-bag" style="width:24px;height:24px;"></i> <span id="cart-badge" class="cart-badge hidden">0</span> </button>
+   </div>
+  </nav><!-- Hero -->
+  <header id="beranda" class="relative pt-16" style="min-height: calc(70 * min(var(--vh, 1vh), 1vh));">
+   <div class="absolute inset-0"><img data-template-id="hero-image" class="canva-image w-full h-full object-cover" loading="lazy" src="https://images.pexels.com/photos/32459865/pexels-photo-32459865.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" alt="Inviting bakery interior showcasing a variety of fresh breads and pastries on display in a warm setting.">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+   </div>
+   <div class="relative z-10 max-w-6xl mx-auto px-6 flex items-center" style="min-height: calc(70 * min(var(--vh, 1vh), 1vh));">
+    <div class="max-w-lg">
+     <h2 data-template-id="hero-title" class="canva-text font-display text-4xl md:text-5xl leading-tight" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 24px;">Roti &amp; Kue Segar Setiap Hari</h2>
+     <p data-template-id="hero-subtitle" class="canva-text mt-4 text-lg" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Dibuat dengan cinta di Batuphat, Lhokseumawe. Tanpa pengawet, selalu fresh &amp; higienis.</p><a href="#menu" data-template-id="hero-cta" class="canva-button inline-block mt-6 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:scale-105 transition-transform" style="background: rgb(194, 24, 91); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Pesan Sekarang</a>
+    </div>
+   </div>
+  </header>
+  <main><!-- Features -->
+   <section data-template-id="features-section" class="canva-section py-16" style="background: rgb(255, 249, 245);">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+     <div class="p-4">
+      <div class="text-3xl mb-2">
+       🍞
+      </div>
+      <h3 data-template-id="feat-1-title" class="canva-text font-semibold" style="color: rgb(74, 44, 42); font-weight: 600; font-style: normal; font-size: 19px;">Fresh Setiap Hari</h3>
+      <p data-template-id="feat-1-desc" class="canva-text text-sm mt-1" style="color: rgb(107, 78, 78); font-weight: 400; font-style: normal; font-size: 16px;">Homemade, dibuat pagi hari</p>
+     </div>
+     <div class="p-4">
+      <div class="text-3xl mb-2">
+       🌿
+      </div>
+      <h3 data-template-id="feat-2-title" class="canva-text font-semibold" style="color: rgb(74, 44, 42); font-weight: 600; font-style: normal; font-size: 19px;">Tanpa Pengawet</h3>
+      <p data-template-id="feat-2-desc" class="canva-text text-sm mt-1" style="color: rgb(107, 78, 78); font-weight: 400; font-style: normal; font-size: 16px;">100% bahan alami pilihan</p>
+     </div>
+     <div class="p-4">
+      <div class="text-3xl mb-2">
+       ✨
+      </div>
+      <h3 data-template-id="feat-3-title" class="canva-text font-semibold" style="color: rgb(74, 44, 42); font-weight: 600; font-style: normal; font-size: 19px;">Higienis</h3>
+      <p data-template-id="feat-3-desc" class="canva-text text-sm mt-1" style="color: rgb(107, 78, 78); font-weight: 400; font-style: normal; font-size: 16px;">Standar kebersihan terjaga</p>
+     </div>
+     <div class="p-4">
+      <div class="text-3xl mb-2">
+       💰
+      </div>
+      <h3 data-template-id="feat-4-title" class="canva-text font-semibold" style="color: rgb(74, 44, 42); font-weight: 600; font-style: normal; font-size: 19px;">Harga Terjangkau</h3>
+      <p data-template-id="feat-4-desc" class="canva-text text-sm mt-1" style="color: rgb(107, 78, 78); font-weight: 400; font-style: normal; font-size: 16px;">Kualitas premium, harga bersahabat</p>
+     </div>
+    </div>
+   </section><!-- Stock Notice -->
+   <section class="max-w-6xl mx-auto px-4 mb-8">
+    <div data-template-id="stock-notice" class="canva-banner flex items-center gap-3 p-4 rounded-xl" style="background: rgb(236, 253, 245);"><span class="stock-pulse text-green-600 text-xl">●</span>
+     <p data-template-id="stock-text" class="canva-text text-sm font-medium" style="color: rgb(6, 95, 70); font-weight: 400; font-style: normal; font-size: 16px;">🟢 Hari ini tersedia: Donat Premium &amp; Cupcake. Stok terbatas!</p>
+    </div>
+   </section><!-- Categories -->
+   <section class="max-w-6xl mx-auto px-4 mb-12">
+    <h2 data-template-id="cat-heading" class="canva-text font-display text-2xl text-center mb-8" style="color: rgb(74, 44, 42); font-weight: 700; font-style: normal; font-size: 24px;">Kategori Produk</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+     <div data-template-id="cat-roti" class="canva-card relative rounded-2xl overflow-hidden group cursor-pointer" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})" style="background: rgb(255, 255, 255);"><img data-template-id="cat-roti-img" class="canva-image w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Freshly sliced whole grain bread with oats and flour provides a rustic and nutritious appeal.">
+      <div class="absolute inset-0 bg-black/30 flex items-end p-6">
+       <h3 data-template-id="cat-roti-title" class="canva-text font-display text-xl" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 19px;">Roti &amp; Donat Harian</h3>
+      </div>
+     </div>
+     <div data-template-id="cat-custom" class="canva-card relative rounded-2xl overflow-hidden group cursor-pointer" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})" style="background: rgb(255, 255, 255);"><img data-template-id="cat-custom-img" class="canva-image w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="https://images.pexels.com/photos/1702373/pexels-photo-1702373.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Elegant white wedding cake adorned with fresh roses and daisies, perfect for a romantic celebration.">
+      <div class="absolute inset-0 bg-black/30 flex items-end p-6">
+       <h3 data-template-id="cat-custom-title" class="canva-text font-display text-xl" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 19px;">Kue Custom / Ulang Tahun</h3>
+      </div>
+     </div>
+    </div>
+   </section><!-- Products -->
+   <section id="menu" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 data-template-id="menu-heading" class="canva-text font-display text-2xl text-center mb-4" style="color: rgb(74, 44, 42); font-weight: 700; font-style: normal; font-size: 24px;">Menu Kami</h2>
+    <p data-template-id="menu-sub" class="canva-text text-center mb-10" style="color: rgb(107, 78, 78); font-weight: 400; font-style: normal; font-size: 16px;">Pilih produk favorit Anda dan tambahkan ke keranjang</p><!-- Reguler -->
+    <h3 data-template-id="reguler-heading" class="canva-text font-semibold text-lg mb-4 border-b pb-2" style="color: rgb(74, 44, 42); font-weight: 600; font-style: normal; font-size: 19px;">Menu Reguler / Harian (Daya tahan 1 hari)</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"><!-- Donat -->
+     <div data-template-id="prod-donat" class="canva-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition fade-in" style="background: rgb(255, 255, 255);"><img data-template-id="prod-donat-img" class="canva-image w-full h-48 object-cover" loading="lazy" src="https://images.pexels.com/photos/1191639/pexels-photo-1191639.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Close-up of assorted donuts with colorful icing and sprinkles, showcasing sweet indulgence.">
+      <div class="p-4">
+       <h4 data-template-id="prod-donat-name" class="canva-text font-semibold" style="color: rgb(74, 44, 42); font-weight: 600; font-style: normal; font-size: 16px;">Donat Premium</h4>
+       <p data-template-id="prod-donat-shelf" class="canva-text text-xs mt-1 opacity-70" style="color: rgb(139, 107, 107); font-weight: 400; font-style: normal; font-size: 16px;">Daya tahan: 1 hari</p>
+       <div class="flex items-center justify-between mt-3"><span data-template-id="prod-donat-price" class="canva-text font-bold" style="color: rgb(194, 24, 91); font-weight: 700; font-style: normal; font-size: 16px;">Rp 25.000</span> <button class="add-cart-btn px-3 py-1.5 rounded-full text-sm font-medium bg-rose-600 text-white hover:bg-rose-700 transition" data-product="Donat Premium" data-price="25000">+ Keranjang</button>
+       </div>
+      </div>
+     </div><!-- Cupcake -->
+     <div data-template-id="prod-cupcake" class="canva-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition fade-in" style="background: rgb(255, 255, 255);"><img data-template-id="prod-cupcake-img" class="canva-image w-full h-48 object-cover" loading="lazy" src="https://images.pexels.com/photos/1028714/pexels-photo-1028714.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Decadent chocolate cupcake with rich cream and chocolate chunks, perfect for indulgence.">
+      <div class="p-4">
+       <h4 data-template-id="prod-cupcake-name" class="canva-text font-semibold" style="color: rgb(74, 44, 42); font-weight: 600; font-style: normal; font-size: 16px;">Cupcake</h4>
+       <p data-template-id="prod-cupcake-shelf" class="canva-text text-xs mt-1 opacity-70" style="color: rgb(139, 107, 107); font-weight: 400; font-style: normal; font-size: 16px;">Daya tahan: 1 hari</p>
+       <div class="flex items-center justify-between mt-3"><span data-template-id="prod-cupcake-price" class="canva-text font-bold" style="color: rgb(194, 24, 91); font-weight: 700; font-style: normal; font-size: 16px;">Rp 10.000 / cup</span> <button class="add-cart-btn px-3 py-1.5 rounded-full text-sm font-medium bg-rose-600 text-white hover:bg-rose-700 transition" data-product="Cupcake" data-price="10000">+ Keranjang</button>
+       </div>
+      </div>
+     </div>
+    </div><!-- Custom -->
+    <h3 data-template-id="custom-heading" class="canva-text font-semibold text-lg mb-4 border-b pb-2" style="color: rgb(74, 44, 42); font-weight: 600; font-style: normal; font-size: 19px;">Menu Custom / Pre-Order (Daya tahan 3 hari)</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Bento Cake -->
+     <div data-template-id="prod-bento" class="canva-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition fade-in" style="background: rgb(255, 255, 255);"><img data-template-id="prod-bento-img" class="canva-image w-full h-48 object-cover" loading="lazy" src="https://images.pexels.com/photos/29617078/pexels-photo-29617078.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Simple birthday cake in eco-friendly container with minimalistic design. Perfect for celebrations.">
+      <div class="p-4">
+       <h4 data-template-id="prod-bento-name" class="canva-text font-semibold" style="color: rgb(74, 44, 42); font-weight: 600; font-style: normal; font-size: 16px;">Bento Cake Custom</h4>
+       <p data-template-id="prod-bento-shelf" class="canva-text text-xs mt-1 opacity-70" style="color: rgb(139, 107, 107); font-weight: 400; font-style: normal; font-size: 16px;">Daya tahan: 3 hari | Pre-Order</p>
+       <div class="flex items-center justify-between mt-3"><span data-template-id="prod-bento-price" class="canva-text font-bold" style="color: rgb(194, 24, 91); font-weight: 700; font-style: normal; font-size: 16px;">Rp 50.000</span> <button class="add-cart-btn px-3 py-1.5 rounded-full text-sm font-medium bg-rose-600 text-white hover:bg-rose-700 transition" data-product="Bento Cake Custom" data-price="50000" data-custom="true">+ Keranjang</button>
+       </div><input type="text" placeholder="Catatan: tulis nama/desain..." class="mt-2 w-full text-sm border rounded-lg px-3 py-1.5 focus:ring-2 focus:ring-rose-300 outline-none custom-note">
+      </div>
+     </div><!-- Black Forest Kecil -->
+     <div data-template-id="prod-bf-small" class="canva-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition fade-in" style="background: rgb(255, 255, 255);"><img data-template-id="prod-bf-small-img" class="canva-image w-full h-48 object-cover" loading="lazy" src="https://images.pexels.com/photos/8802102/pexels-photo-8802102.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Delicious Black Forest cake topped with whipped cream and cherries on a cake stand.">
+      <div class="p-4">
+       <h4 data-template-id="prod-bf-small-name" class="canva-text font-semibold" style="color: rgb(74, 44, 42); font-weight: 600; font-style: normal; font-size: 16px;">Black Forest Custom (Kecil)</h4>
+       <p data-template-id="prod-bf-small-shelf" class="canva-text text-xs mt-1 opacity-70" style="color: rgb(139, 107, 107); font-weight: 400; font-style: normal; font-size: 16px;">Daya tahan: 3 hari | Pre-Order</p>
+       <div class="flex items-center justify-between mt-3"><span data-template-id="prod-bf-small-price" class="canva-text font-bold" style="color: rgb(194, 24, 91); font-weight: 700; font-style: normal; font-size: 16px;">Rp 60.000</span> <button class="add-cart-btn px-3 py-1.5 rounded-full text-sm font-medium bg-rose-600 text-white hover:bg-rose-700 transition" data-product="Black Forest (Kecil)" data-price="60000" data-custom="true">+ Keranjang</button>
+       </div><input type="text" placeholder="Catatan: tulis nama/desain..." class="mt-2 w-full text-sm border rounded-lg px-3 py-1.5 focus:ring-2 focus:ring-rose-300 outline-none custom-note">
+      </div>
+     </div><!-- Black Forest Besar -->
+     <div data-template-id="prod-bf-large" class="canva-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition fade-in" style="background: rgb(255, 255, 255);"><img data-template-id="prod-bf-large-img" class="canva-image w-full h-48 object-cover" loading="lazy" src="https://images.pexels.com/photos/19202782/pexels-photo-19202782.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Indulge in this mouthwatering chocolate and cherry cream cake topped with whipped cream.">
+      <div class="p-4">
+       <h4 data-template-id="prod-bf-large-name" class="canva-text font-semibold" style="color: rgb(74, 44, 42); font-weight: 600; font-style: normal; font-size: 16px;">Black Forest Custom (Besar)</h4>
+       <p data-template-id="prod-bf-large-shelf" class="canva-text text-xs mt-1 opacity-70" style="color: rgb(139, 107, 107); font-weight: 400; font-style: normal; font-size: 16px;">Daya tahan: 3 hari | Pre-Order</p>
+       <div class="flex items-center justify-between mt-3"><span data-template-id="prod-bf-large-price" class="canva-text font-bold" style="color: rgb(194, 24, 91); font-weight: 700; font-style: normal; font-size: 16px;">Rp 100.000 - Rp 200.000</span> <button class="add-cart-btn px-3 py-1.5 rounded-full text-sm font-medium bg-rose-600 text-white hover:bg-rose-700 transition" data-product="Black Forest (Besar)" data-price="100000" data-custom="true">+ Keranjang</button>
+       </div><input type="text" placeholder="Catatan: tulis nama/desain..." class="mt-2 w-full text-sm border rounded-lg px-3 py-1.5 focus:ring-2 focus:ring-rose-300 outline-none custom-note">
+      </div>
+     </div>
+    </div>
+   </section><!-- Tentang -->
+   <section id="tentang" data-template-id="about-section" class="canva-section py-16" style="background: rgb(255, 245, 240);">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+     <h2 data-template-id="about-title" class="canva-text font-display text-2xl mb-4" style="color: rgb(74, 44, 42); font-weight: 700; font-style: normal; font-size: 24px;">Tentang Malika Bakery</h2>
+     <p data-template-id="about-desc" class="canva-text leading-relaxed" style="color: rgb(90, 62, 62); font-weight: 400; font-style: normal; font-size: 16px;">Malika Bakery adalah toko roti lokal di Batuphat, Lhokseumawe yang berkomitmen menyajikan roti dan kue segar setiap hari. Kami menggunakan bahan-bahan pilihan tanpa pengawet, diolah secara higienis dengan harga yang terjangkau. Melayani pesanan harian maupun kue custom untuk momen spesial Anda.</p>
+    </div>
+   </section><!-- Lokasi -->
+   <section id="lokasi" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 data-template-id="location-title" class="canva-text font-display text-2xl text-center mb-6" style="color: rgb(74, 44, 42); font-weight: 700; font-style: normal; font-size: 24px;">Lokasi Kami</h2>
+    <div class="rounded-2xl overflow-hidden shadow-lg"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5!2d97.12!3d5.17!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBatuphat%2C+Lhokseumawe!5e0!3m2!1sid!2sid!4v1" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <p data-template-id="location-address" class="canva-text text-center mt-4 text-sm" style="color: rgb(90, 62, 62); font-weight: 400; font-style: normal; font-size: 16px;">📍 Depan Pajak Batuphat, Lhokseumawe, Aceh</p>
+   </section><!-- FAQ -->
+   <section id="faq" class="max-w-3xl mx-auto px-4 py-12">
+    <h2 data-template-id="faq-title" class="canva-text font-display text-2xl text-center mb-8" style="color: rgb(74, 44, 42); font-weight: 700; font-style: normal; font-size: 24px;">Pertanyaan Umum (FAQ)</h2>
+    <div class="space-y-3" id="faq-list">
+     <div class="faq-item border rounded-xl overflow-hidden"><button class="faq-toggle w-full text-left px-5 py-4 font-medium flex justify-between items-center" aria-expanded="false"> <span data-template-id="faq-q1" class="canva-text" style="color: rgb(74, 44, 42); font-weight: 500; font-style: normal; font-size: 16px;">Bagaimana cara memesan kue custom?</span> <i data-lucide="chevron-down" style="width:18px;height:18px;" class="transition-transform"></i> </button>
+      <div class="faq-answer hidden px-5 pb-4">
+       <p data-template-id="faq-a1" class="canva-text text-sm" style="color: rgb(90, 62, 62); font-weight: 400; font-style: normal; font-size: 16px;">Pilih produk custom, isi catatan desain/nama di kolom yang tersedia, lalu checkout. Kami akan menghubungi Anda untuk konfirmasi detail.</p>
+      </div>
+     </div>
+     <div class="faq-item border rounded-xl overflow-hidden"><button class="faq-toggle w-full text-left px-5 py-4 font-medium flex justify-between items-center" aria-expanded="false"> <span data-template-id="faq-q2" class="canva-text" style="color: rgb(74, 44, 42); font-weight: 500; font-style: normal; font-size: 16px;">Berapa lama waktu pre-order?</span> <i data-lucide="chevron-down" style="width:18px;height:18px;" class="transition-transform"></i> </button>
+      <div class="faq-answer hidden px-5 pb-4">
+       <p data-template-id="faq-a2" class="canva-text text-sm" style="color: rgb(90, 62, 62); font-weight: 400; font-style: normal; font-size: 16px;">Pre-order membutuhkan waktu minimal H-1 sebelum tanggal pengambilan. Untuk kue besar, disarankan H-2.</p>
+      </div>
+     </div>
+     <div class="faq-item border rounded-xl overflow-hidden"><button class="faq-toggle w-full text-left px-5 py-4 font-medium flex justify-between items-center" aria-expanded="false"> <span data-template-id="faq-q3" class="canva-text" style="color: rgb(74, 44, 42); font-weight: 500; font-style: normal; font-size: 16px;">Apakah tersedia pengiriman?</span> <i data-lucide="chevron-down" style="width:18px;height:18px;" class="transition-transform"></i> </button>
+      <div class="faq-answer hidden px-5 pb-4">
+       <p data-template-id="faq-a3" class="canva-text text-sm" style="color: rgb(90, 62, 62); font-weight: 400; font-style: normal; font-size: 16px;">Ya! Kami melayani pengiriman via kurir lokal/COD untuk area Lhokseumawe dan Batuphat. Bisa juga diambil langsung di toko.</p>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer data-template-id="footer-section" class="canva-footer py-12" style="background: rgb(74, 44, 42);">
+   <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+    <div>
+     <h3 data-template-id="footer-brand" class="canva-text font-display text-lg mb-3" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 19px;">Malika Bakery</h3>
+     <p data-template-id="footer-tagline" class="canva-text text-sm" style="color: rgb(232, 213, 208); font-weight: 400; font-style: normal; font-size: 16px;">Roti &amp; kue segar setiap hari di Batuphat, Lhokseumawe.</p>
+    </div>
+    <div>
+     <h4 data-template-id="footer-hours-title" class="canva-text font-semibold mb-2" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Jam Operasional</h4>
+     <p data-template-id="footer-hours-1" class="canva-text text-sm" style="color: rgb(232, 213, 208); font-weight: 400; font-style: normal; font-size: 16px;">Shift 1: 07.00 - 12.00 WIB</p>
+     <p data-template-id="footer-hours-2" class="canva-text text-sm mt-1" style="color: rgb(232, 213, 208); font-weight: 400; font-style: normal; font-size: 16px;">Shift 2: 14.00 - 20.00 WIB</p>
+    </div>
+    <div>
+     <h4 data-template-id="footer-contact-title" class="canva-text font-semibold mb-2" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Hubungi Kami</h4>
+     <p data-template-id="footer-phone" class="canva-text text-sm" style="color: rgb(232, 213, 208); font-weight: 400; font-style: normal; font-size: 16px;">📞 0812-XXXX-XXXX</p>
+     <p data-template-id="footer-social" class="canva-text text-sm mt-1" style="color: rgb(232, 213, 208); font-weight: 400; font-style: normal; font-size: 16px;">Instagram: @malikabakery</p>
+    </div>
+   </div>
+   <p data-template-id="footer-copy" class="canva-text text-center text-xs mt-8 opacity-60" style="color: rgb(232, 213, 208); font-weight: 400; font-style: normal; font-size: 16px;">© 2026 Malika Bakery. All rights reserved.</p>
+  </footer><!-- Cart Drawer -->
+  <div id="cart-overlay" class="overlay hidden" aria-hidden="true"></div>
+  <aside id="cart-drawer" class="drawer" role="dialog" aria-label="Keranjang Belanja">
+   <div class="p-6">
+    <div class="flex justify-between items-center mb-6">
+     <h2 data-template-id="cart-title" class="canva-text font-display text-xl" style="color: rgb(74, 44, 42); font-weight: 700; font-style: normal; font-size: 24px;">Keranjang Belanja</h2><button id="cart-close" aria-label="Tutup"><i data-lucide="x" style="width:24px;height:24px;"></i></button>
+    </div>
+    <div id="cart-items" class="space-y-4 mb-6"></div>
+    <div id="cart-empty" class="text-center py-8 text-gray-400"><i data-lucide="shopping-bag" style="width:48px;height:48px;margin:0 auto;opacity:0.3;"></i>
+     <p data-template-id="cart-empty-text" class="canva-text mt-3" style="color: rgb(156, 163, 175); font-weight: 400; font-style: normal; font-size: 16px;">Keranjang masih kosong</p>
+    </div>
+    <div id="cart-footer" class="hidden border-t pt-4">
+     <div class="flex justify-between font-bold text-lg mb-4"><span>Total</span> <span id="cart-total">Rp 0</span>
+     </div><button id="checkout-btn" data-template-id="cart-checkout-btn" class="canva-button w-full py-3 rounded-full font-semibold text-center" style="background: rgb(194, 24, 91); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Checkout</button>
+    </div>
+   </div>
+  </aside><!-- Checkout Modal -->
+  <div id="checkout-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+   <div class="overlay" id="checkout-overlay"></div>
+   <div class="relative z-50 max-w-lg mx-auto my-8 bg-white rounded-2xl shadow-xl p-6">
+    <div class="flex justify-between items-center mb-6">
+     <h2 data-template-id="checkout-title" class="canva-text font-display text-xl" style="color: rgb(74, 44, 42); font-weight: 700; font-style: normal; font-size: 24px;">Checkout</h2><button id="checkout-close" aria-label="Tutup"><i data-lucide="x" style="width:24px;height:24px;"></i></button>
+    </div>
+    <form id="checkout-form" class="space-y-4">
+     <div><label data-template-id="checkout-name-label" class="canva-text text-sm font-medium block mb-1" for="co-name" style="color: rgb(74, 44, 42); font-weight: 500; font-style: normal; font-size: 16px;">Nama Lengkap</label> <input id="co-name" type="text" required="" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-rose-300 outline-none">
+     </div>
+     <div><label data-template-id="checkout-phone-label" class="canva-text text-sm font-medium block mb-1" for="co-phone" style="color: rgb(74, 44, 42); font-weight: 500; font-style: normal; font-size: 16px;">No. WhatsApp / Telepon</label> <input id="co-phone" type="tel" required="" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-rose-300 outline-none">
+     </div>
+     <div><label data-template-id="checkout-delivery-label" class="canva-text text-sm font-medium block mb-1" for="co-delivery" style="color: rgb(74, 44, 42); font-weight: 500; font-style: normal; font-size: 16px;">Metode Pengiriman</label> <select id="co-delivery" required="" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-rose-300 outline-none"> <option value="pickup">Ambil di Toko (Store Pick-Up)</option> <option value="cod">Kurir Lokal / COD</option> </select>
+     </div>
+     <div id="address-field" class="hidden"><label data-template-id="checkout-address-label" class="canva-text text-sm font-medium block mb-1" for="co-address" style="color: rgb(74, 44, 42); font-weight: 500; font-style: normal; font-size: 16px;">Alamat Lengkap</label> <textarea id="co-address" rows="2" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-rose-300 outline-none"></textarea>
+     </div>
+     <div><label data-template-id="checkout-payment-label" class="canva-text text-sm font-medium block mb-1" for="co-payment" style="color: rgb(74, 44, 42); font-weight: 500; font-style: normal; font-size: 16px;">Metode Pembayaran</label> <select id="co-payment" required="" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-rose-300 outline-none"> <option value="transfer">Bank Transfer</option> <option value="qris">QRIS</option> <option value="dana">DANA</option> <option value="ovo">OVO</option> <option value="gopay">GoPay</option> </select>
+     </div>
+     <div><label data-template-id="checkout-notes-label" class="canva-text text-sm font-medium block mb-1" for="co-notes" style="color: rgb(74, 44, 42); font-weight: 500; font-style: normal; font-size: 16px;">Catatan Tambahan</label> <textarea id="co-notes" rows="2" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-rose-300 outline-none" placeholder="Catatan tambahan..."></textarea>
+     </div>
+     <div class="bg-gray-50 rounded-lg p-4">
+      <p class="font-semibold mb-2">Ringkasan Pesanan</p>
+      <div id="checkout-summary" class="text-sm space-y-1"></div>
+      <div class="border-t mt-2 pt-2 font-bold flex justify-between"><span>Total</span><span id="checkout-total">Rp 0</span>
+      </div>
+     </div><button type="submit" data-template-id="checkout-submit-btn" class="canva-button w-full py-3 rounded-full font-semibold" style="background: rgb(194, 24, 91); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Pesan Sekarang</button>
+    </form><!-- Success -->
+    <div id="checkout-success" class="hidden text-center py-8">
+     <div class="text-5xl mb-4">
+      🎉
+     </div>
+     <h3 data-template-id="checkout-success-title" class="canva-text font-display text-xl mb-2" style="color: rgb(74, 44, 42); font-weight: 700; font-style: normal; font-size: 19px;">Pesanan Berhasil!</h3>
+     <p data-template-id="checkout-success-desc" class="canva-text text-sm" style="color: rgb(90, 62, 62); font-weight: 400; font-style: normal; font-size: 16px;">Terima kasih! Kami akan menghubungi Anda untuk konfirmasi pesanan via WhatsApp.</p><button id="checkout-done" class="mt-6 px-6 py-2 rounded-full bg-rose-600 text-white font-medium">Tutup</button>
+    </div>
+   </div>
+  </div>
+  <script src="/_sdk/0e8f359d3c23f6d5.editing_sdk.js" integrity="sha512-CBLuYm/olmgyMedTtPRFeqCRZcSWUh6/39ewyXAbnr1dsVHBACzZ59KGJZXvuWNHOHixfWegfuMN9JzmLEDIoA=="></script>
+  <script src="/_sdk/e3937a0574eb2d69.data_sdk.js" integrity="sha512-xbp/ACqEQy1aDxYMtXTrR3y5MUbzxuggRR/9sD48Gl4VhLMMCiAHsxMaFV6DTdeBpR6ymF+t2zhPKYkWM3+Jfw=="></script>
+  <script>
+        // Cart state
+        let cart = [];
+        let orders = [];
+
+        function updateCartUI() {
+            const badge = document.getElementById('cart-badge');
+            const count = cart.reduce((s, i) => s + i.qty, 0);
+            badge.textContent = count;
+            badge.classList.toggle('hidden', count === 0);
+
+            const itemsEl = document.getElementById('cart-items');
+            const emptyEl = document.getElementById('cart-empty');
+            const footerEl = document.getElementById('cart-footer');
+
+            if (cart.length === 0) {
+                itemsEl.innerHTML = '';
+                emptyEl.classList.remove('hidden');
+                footerEl.classList.add('hidden');
+                return;
+            }
+            emptyEl.classList.add('hidden');
+            footerEl.classList.remove('hidden');
+
+            itemsEl.innerHTML = cart.map((item, i) => `
+                <div class="flex justify-between items-center border-b pb-3">
+                    <div>
+                        <p class="font-medium text-sm">${item.name}</p>
+                        ${item.note ? `<p class="text-xs text-gray-500">${item.note}</p>` : ''}
+                        <div class="flex items-center gap-2 mt-1">
+                            <button onclick="changeQty(${i},-1)" class="w-6 h-6 rounded-full bg-gray-200 text-sm flex items-center justify-center">−</button>
+                            <span class="text-sm font-medium">${item.qty}</span>
+                            <button onclick="changeQty(${i},1)" class="w-6 h-6 rounded-full bg-gray-200 text-sm flex items-center justify-center">+</button>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-semibold text-sm">Rp ${(item.price * item.qty).toLocaleString('id-ID')}</p>
+                        <button onclick="removeItem(${i})" class="text-xs text-red-500 mt-1">Hapus</button>
+                    </div>
+                </div>
+            `).join('');
+
+            const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+            document.getElementById('cart-total').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+        }
+
+        function changeQty(idx, delta) {
+            cart[idx].qty += delta;
+            if (cart[idx].qty < 1) cart.splice(idx, 1);
+            updateCartUI();
+        }
+        function removeItem(idx) { cart.splice(idx, 1); updateCartUI(); }
+
+        // Add to cart
+        document.querySelectorAll('.add-cart-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const name = btn.dataset.product;
+                const price = parseInt(btn.dataset.price);
+                const isCustom = btn.dataset.custom === 'true';
+                let note = '';
+                if (isCustom) {
+                    const input = btn.closest('.p-4').querySelector('.custom-note');
+                    note = input ? input.value.trim() : '';
+                }
+                const existing = cart.find(c => c.name === name && c.note === note);
+                if (existing) { existing.qty++; }
+                else { cart.push({ name, price, qty: 1, note }); }
+                updateCartUI();
+                // Brief feedback
+                btn.textContent = '✓ Ditambahkan';
+                setTimeout(() => { btn.textContent = '+ Keranjang'; }, 1000);
+            });
+        });
+
+        // Cart drawer
+        const cartToggle = document.getElementById('cart-toggle');
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartClose = document.getElementById('cart-close');
+
+        function openCart() { cartDrawer.classList.add('open'); cartOverlay.classList.remove('hidden'); }
+        function closeCart() { cartDrawer.classList.remove('open'); cartOverlay.classList.add('hidden'); }
+        cartToggle.addEventListener('click', openCart);
+        cartClose.addEventListener('click', closeCart);
+        cartOverlay.addEventListener('click', closeCart);
+
+        // Checkout
+        const checkoutModal = document.getElementById('checkout-modal');
+        const checkoutForm = document.getElementById('checkout-form');
+        document.getElementById('checkout-btn').addEventListener('click', () => {
+            closeCart();
+            checkoutModal.classList.remove('hidden');
+            const summary = document.getElementById('checkout-summary');
+            summary.innerHTML = cart.map(i => `<div class="flex justify-between"><span>${i.name} x${i.qty}</span><span>Rp ${(i.price*i.qty).toLocaleString('id-ID')}</span></div>`).join('');
+            const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+            document.getElementById('checkout-total').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+        });
+        document.getElementById('checkout-close').addEventListener('click', () => checkoutModal.classList.add('hidden'));
+        document.getElementById('checkout-overlay').addEventListener('click', () => checkoutModal.classList.add('hidden'));
+        document.getElementById('checkout-done').addEventListener('click', () => checkoutModal.classList.add('hidden'));
+
+        // Delivery toggle address
+        document.getElementById('co-delivery').addEventListener('change', (e) => {
+            document.getElementById('address-field').classList.toggle('hidden', e.target.value === 'pickup');
+        });
+
+        // Submit order
+        checkoutForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = checkoutForm.querySelector('[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Memproses...';
+
+            const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+            const order = {
+                customer_name: document.getElementById('co-name').value,
+                phone: document.getElementById('co-phone').value,
+                address: document.getElementById('co-address').value || '',
+                delivery_method: document.getElementById('co-delivery').value,
+                payment_method: document.getElementById('co-payment').value,
+                order_items: JSON.stringify(cart),
+                total_price: total,
+                notes: document.getElementById('co-notes').value,
+                order_date: new Date().toISOString(),
+                status: 'pending'
+            };
+
+            if (orders.length >= 999) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Pesan Sekarang';
+                document.getElementById('checkout-summary').innerHTML += '<p class="text-red-500 mt-2">Batas pesanan tercapai. Silakan coba lagi nanti.</p>';
+                return;
+            }
+
+            const result = await window.dataSdk.create(order);
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Pesan Sekarang';
+
+            if (result.isOk) {
+                cart = [];
+                updateCartUI();
+                checkoutForm.classList.add('hidden');
+                document.getElementById('checkout-success').classList.remove('hidden');
+                checkoutForm.reset();
+            } else {
+                document.getElementById('checkout-summary').innerHTML += '<p class="text-red-500 mt-2">Gagal mengirim pesanan. Silakan coba lagi.</p>';
+            }
+        });
+
+        // Data SDK
+        const dataHandler = {
+            onDataChanged(data) {
+                orders = data;
+            }
+        };
+        (async () => {
+            await window.dataSdk.init(dataHandler);
+        })();
+
+        // FAQ
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                const icon = btn.querySelector('[data-lucide]');
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', !expanded);
+                answer.classList.toggle('hidden');
+                icon.style.transform = expanded ? '' : 'rotate(180deg)';
+            });
+        });
+
+        lucide.createIcons();
+    </script>
+ 
+</body></html>
